@@ -257,7 +257,7 @@ exit_with_usage(void)
   fprintf(stderr, "    -a          toggle autoskip: A single '*' replaces nul-lines. Default off.\n");
   fprintf(stderr, "    -b          binary digit dump (incompatible with -ps,-i). Default hex.\n");
   fprintf(stderr, "    -C          capitalize variable names in C include file style (-i).\n");
-  fprintf(stderr, "    -c cols     format <cols> octets per line. Default 16 (-i: 12, -ps: 30).\n");
+  fprintf(stderr, "    -c cols     format <cols> octets per line. Default 16 (-i: 12, -ps: 32).\n");
   fprintf(stderr, "    -E          show characters in EBCDIC. Default ASCII.\n");
   fprintf(stderr, "    -e          little-endian dump (incompatible with -ps,-i,-r).\n");
   fprintf(stderr, "    -g bytes    number of octets per group in normal output. Default 2 (-e: 4).\n");
@@ -859,7 +859,7 @@ main(int argc, char *argv[])
   if (!colsgiven || (!cols && hextype != HEX_POSTSCRIPT))
     switch (hextype)
       {
-      case HEX_POSTSCRIPT:	cols = 30; break;
+      case HEX_POSTSCRIPT:	cols = 32; break;
       case HEX_CINCLUDE:	cols = 12; break;
       case HEX_BITS:		cols = 6; break;
       case HEX_NORMAL:
